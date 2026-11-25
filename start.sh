@@ -31,7 +31,7 @@ else
   VENV_VERSION=""
 fi
 
-SELECTED_VERSION="$("$PYTHON_BIN" -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}')"
+SELECTED_VERSION="$("$PYTHON_BIN" -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')"
 
 if [ "$VENV_VERSION" != "$SELECTED_VERSION" ]; then
   echo "Creating project virtual environment with Python $SELECTED_VERSION..."
